@@ -7,6 +7,10 @@ Optional arguments
     --noclip will not copy link to clipboard after upload
     -j will push the link the a phone connected through Join by Joaoapps.
 
+Optional alias for convenience:
+    Put alias fileio="python3 PATH/TO/CODE/fileio_upload.py" in ~/.bashrc
+    New Usage: fileio test.txt
+
 Author: David Chen
 """
 import requests
@@ -17,8 +21,7 @@ import pathlib
 
 # this should be of the basic form below:
 # https://joinjoaomgcd.appspot.com/_ah/api/messaging/v1/sendPush?deviceId=???&apikey=???
-JOIN_API_URL = 'https://joinjoaomgcd.appspot.com/_ah/api/messaging/v1/sendPush?deviceId=7a050437f66742919d68fb6b51b9c230&apikey=a174dac143094445a35aaf717c2dd875'
-# JOIN_API_URL = ''
+JOIN_API_URL = ''
 
 
 def get_url_from_resp(resp):
