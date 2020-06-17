@@ -40,8 +40,18 @@ def join_push_url(url):
     requests.get(url)
 
 
+def parser():
+    """ Parse command line arguments and return file path and additional flags  """
+    parser = argparse.ArgumentParser()
+    parser.add_argument('file')
+    args = parser.parse_args()
+    return args
+
+
 if __name__ == '__main__':
-    resp = upload_to_fileio('test.txt')
+    file = parser().file
+    resp = upload_to_fileio(file)
     link = get_link_from_resp(resp)
     pyperclip.copy(link)
+
 
