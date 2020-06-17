@@ -10,6 +10,7 @@ Author: David Chen
 import requests
 import json
 import pyperclip
+import argparse
 
 # this should be of the basic form below:
 # https://joinjoaomgcd.appspot.com/_ah/api/messaging/v1/sendPush?deviceId=???&apikey=???
@@ -26,7 +27,7 @@ def upload_to_fileio(file_name):
     url = 'https://file.io/'
 
     files = {
-        'file': ('test.txt', open('test.txt', 'rb')),
+        'file': open(file_name, 'rb')
     }
 
     resp = requests.post(url, files=files)
