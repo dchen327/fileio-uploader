@@ -5,7 +5,7 @@ Usage: python3 fileio_upload.py test.txt
 This command will print the file.io link and will also copy the link to clipboard.
 Optional arguments
     --noclip will not copy link to clipboard after upload
-    -j will push the link the a phone connected through Join by Joaoapps.
+    -j or --join will push the link to a phone connected through Join by Joaoapps.
 
 Optional alias for convenience:
     Put alias fileio="python3 PATH/TO/CODE/fileio_upload.py" in ~/.bashrc
