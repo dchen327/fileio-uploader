@@ -1,5 +1,5 @@
 """
-A command line utility to allow for quick file transfers.
+A python command line utility to allow for quick file transfers using file.io
 
 Usage: python3 fileio_upload.py test.txt
 This command will print the file.io link and will also copy the link to clipboard.
@@ -20,7 +20,7 @@ import argparse
 import pathlib
 
 # this should be of the basic form below:
-# https://joinjoaomgcd.appspot.com/_ah/api/messaging/v1/sendPush?deviceId=???&apikey=???
+# https://joinjoaomgd.cappspot.com/_ah/api/messaging/v1/sendPush?deviceId=???&apikey=???
 JOIN_API_URL = ''
 
 
@@ -69,9 +69,10 @@ if __name__ == '__main__':
     args = parser()
     resp = upload_to_fileio(args.file)
     url = get_url_from_resp(resp)
-    if args.noclip:
-        print(url)
-    else:
-        copy_url(url)
     if args.join:
         join_push_url(url)
+    else:
+        if args.noclip:
+            print(url)
+        else:
+            copy_url(url)
