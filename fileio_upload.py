@@ -14,7 +14,6 @@ Optional alias for convenience:
 Author: David Chen
 """
 import requests
-import json
 import pyperclip
 import argparse
 import pathlib
@@ -26,7 +25,7 @@ JOIN_API_URL = ''
 
 def get_url_from_resp(resp):
     """ Return file.io link from API response """
-    return json.loads(resp.content)['link']
+    return resp.json()['link']
 
 
 def upload_to_fileio(file_name):
